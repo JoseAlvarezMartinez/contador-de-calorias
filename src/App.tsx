@@ -15,7 +15,7 @@ export const App = () => {
             </header>
 
             <RegistroDiario />
-            {state?.ejercicio.length ? <Ejercicio /> : <p className="text-white">No hay nada</p>}
+            {state?.ejercicio.length ? <Ejercicio /> : <p className="text-white">No hay</p>}
 
             <button
                 onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Modal]", payload: true })}

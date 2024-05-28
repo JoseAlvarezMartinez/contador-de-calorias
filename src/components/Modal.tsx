@@ -26,8 +26,9 @@ const opcionesInfo: OpcionesInfo[] = [
 ]
 
 export const Modal = ({ dispatch }: ModalProps) => {
+
     return (
-        <section className="modal-background">
+        <section className={`modal-background`}>
             <p
                 onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Modal]", payload: false })}
                 className="modal-close">X</p>

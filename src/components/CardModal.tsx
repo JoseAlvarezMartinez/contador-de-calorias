@@ -30,7 +30,7 @@ export const CardModal = ({ opcion }: CardModalProps) => {
   return (
     <section onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR opcion]", payload: opcion.id })} className={`card-modal-container ${opcion.id === state.actividadActive ? "opcion-active" : ""}`}>
       <h2 className="text-white card-modal-titulo">{opcion.titulo}</h2>
-      <IconComponent size={"3rem"} color="#fff" />
+      <IconComponent size={"1.5rem"} color="#fff" />
     </section>
   )
 }
