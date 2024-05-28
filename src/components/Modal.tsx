@@ -1,32 +1,14 @@
 import { Dispatch } from "react"
 import { ActionTypes } from "../reducer/actividades-reducer"
 import { CardModal } from "./CardModal"
+import { opcionesInfo } from "../data"
+import { FormModal } from "./FormModal"
 
 interface ModalProps {
-    dispatch: Dispatch<ActionTypes>
+    dispatch: Dispatch<ActionTypes>,
 }
-
-export interface OpcionesInfo {
-    [key: string]: string
-}
-
-const opcionesInfo: OpcionesInfo[] = [
-    {
-        titulo: "Ejercicio",
-        id: "ejercicio",
-    },
-    {
-        titulo: "Comida",
-        id: "comida",
-    },
-    {
-        titulo: "Agua",
-        id: "agua",
-    },
-]
 
 export const Modal = ({ dispatch }: ModalProps) => {
-
     return (
         <section className={`modal-background`}>
             <p
@@ -40,6 +22,8 @@ export const Modal = ({ dispatch }: ModalProps) => {
                 </section>
             </section>
 
+
+            <FormModal />
         </section>
     )
 }

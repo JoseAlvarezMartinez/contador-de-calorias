@@ -5,13 +5,18 @@ type EjercicioType = {
     km?: number,
     id: string,
 }
+type ActividadActiveTypes = {
+    titulo: string,
+    id:string,
+    pregunta:string
+}
 
 export type InitialStateType = {
     calorias: number,
     agua: number,
     isModal: boolean,
     ejercicio: EjercicioType[],
-    actividadActive: string
+    actividadActive: ActividadActiveTypes
 }
 
 export const initialState = {
@@ -19,12 +24,12 @@ export const initialState = {
     agua: 0,
     isModal: false,
     ejercicio: [],
-    actividadActive: ""
+    actividadActive: {}
 }
 export type ActionTypes =
     | { type: "[AGREGAR Actividad]", payload: EjercicioType }
     | { type: "[ACTIVAR/DESACTIVAR Modal]", payload: InitialStateType["isModal"] }
-    | { type: "[ACTIVAR/DESACTIVAR opcion]", payload: string }
+    | { type: "[ACTIVAR/DESACTIVAR opcion]", payload: ActividadActiveTypes }
 
 export const ActividadesReducer = (state: InitialStateType = initialState, action: ActionTypes) => {
     switch (action.type) {

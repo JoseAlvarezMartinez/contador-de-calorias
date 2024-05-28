@@ -21,7 +21,7 @@ export const App = () => {
                 onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Modal]", payload: true })}
                 className="btn-agregar">+</button>
 
-            {state?.isModal && <Modal dispatch={dispatch} />}
+            {state?.isModal && <Modal dispatch={dispatch} state={state}/>}
 
         </>
     )
