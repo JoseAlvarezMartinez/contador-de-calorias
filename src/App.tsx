@@ -1,12 +1,13 @@
-import { useReducer } from "react"
+import { useContext } from "react"
 import { Ejercicio } from "./components/Ejercicio"
 import { RegistroDiario } from "./components/RegistroDiario"
-import { ActividadesReducer, initialState } from "./reducer/actividades-reducer"
 import { Modal } from "./components/Modal"
+import { ReducerProvider } from "./context/ReducerContext"
 
 export const App = () => {
 
-    const [state, dispatch] = useReducer(ActividadesReducer, initialState)
+    const { state, dispatch } = useContext(ReducerProvider)
+
     return (
         <>
             <header>
@@ -17,10 +18,10 @@ export const App = () => {
             {state?.ejercicio.length ? <Ejercicio /> : <p className="text-white">No hay nada</p>}
 
             <button
-                onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Moda]", payload: true })}
+                onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Modal]", payload: true })}
                 className="btn-agregar">+</button>
 
-            {state?.isModal && <Modal dispatch={dispatch}/>}
+            {state?.isModal && <Modal dispatch={dispatch} />}
 
         </>
     )

@@ -1,37 +1,44 @@
 import { Dispatch } from "react"
 import { ActionTypes } from "../reducer/actividades-reducer"
 import { CardModal } from "./CardModal"
-import { FaAppleAlt } from "react-icons/fa";
-import { CgGym } from "react-icons/cg";
-import { FaBottleWater } from "react-icons/fa6";
 
 interface ModalProps {
     dispatch: Dispatch<ActionTypes>
 }
-const CardModalInfo = [
+
+export interface OpcionesInfo {
+    [key: string]: string
+}
+
+const opcionesInfo: OpcionesInfo[] = [
     {
-        categoria: "Comida",
-        icono: <FaAppleAlt color="#fff"/>
+        titulo: "Ejercicio",
+        id: "ejercicio",
     },
     {
-        categoria: "Agua",
-        icono: <FaBottleWater color="#fff"/>
+        titulo: "Comida",
+        id: "comida",
     },
     {
-        categoria: "Ejercicio",
-        icono: <CgGym color="#fff"/>
+        titulo: "Agua",
+        id: "agua",
     },
 ]
+
 export const Modal = ({ dispatch }: ModalProps) => {
     return (
         <section className="modal-background">
             <p
-                onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Moda]", payload: false })}
+                onClick={() => dispatch({ type: "[ACTIVAR/DESACTIVAR Modal]", payload: false })}
                 className="modal-close">X</p>
 
-            {
-                CardModalInfo.map((info) => <CardModal info={info}/>)
-            }
+            <section>
+                <h3 className="text-white select-opcion">Seleccione una opción</h3>
+                <section className="modal-container-grid">
+                    {opcionesInfo.map((opcion) => <CardModal key={opcion.id} opcion={opcion} />)}
+                </section>
+            </section>
+
         </section>
     )
 }
