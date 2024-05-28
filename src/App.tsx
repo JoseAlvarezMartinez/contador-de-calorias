@@ -1,3 +1,4 @@
+import { Ejercicio } from "./components/Ejercicio"
 import { RegistroDiario } from "./components/RegistroDiario"
 
 export const App = () => {
@@ -8,6 +9,7 @@ export const App = () => {
             </header>
 
             <RegistroDiario />
+            <Ejercicio />
 
             <div className="agregar-btn">
                 <button>+</button>
