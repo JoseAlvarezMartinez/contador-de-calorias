@@ -5,8 +5,8 @@ export const RegistroDiario = () => {
     <section className="registro-diario-container">
       <h2 className="text-white registro-h2">Registro Diario</h2>
 
-      <Registro titulo={"Calorias"} />
-      <Registro titulo={"Agua"} />
+      <Registro titulo={"calorias"} />
+      <Registro titulo={"agua"} />
     </section>
   )
 }
